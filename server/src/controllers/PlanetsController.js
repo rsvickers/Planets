@@ -15,7 +15,7 @@ export class PlanetsController extends BaseController {
         try {
             const planetData = request.body
             const userInfo = request.userInfo
-            planetData.creatorId = userInfo.id
+            planetData.galaxyId = userInfo.id
             const planet = await planetsService.createPlanet(planetData)
             return response.send(planet)
         } catch (error) {
